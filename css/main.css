@@ -1,0 +1,22 @@
+/* Header */
+
+.mainHeader {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  background: #ddd;
+}
+
+.mainHeader h1 {
+  font-size: 0;
+}
+
+.mainHeader .inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.mainHeader .gnb-main {
+  display: flex;
+  gap: 30px;
+}
