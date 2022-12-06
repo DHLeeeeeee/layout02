@@ -1,3 +1,15 @@
+@keyframes move {
+  0% {
+    top: 95%;
+  }
+  50% {
+    top: 96%;
+  }
+  100% {
+    top: 95%;
+  }
+}
+
 /* Header */
 
 .mainHeader {
@@ -10,7 +22,7 @@
   height: 70px;
   background: transparent;
   color: #fff;
-  z-index: 999;
+  z-index: 9999999;
   transition: 0.5s;
   transition-delay: 0.5s;
 }
@@ -38,7 +50,8 @@
 
 .mainHeader .gnb {
   display: flex;
-  gap: 150px;
+  justify-content: center;
+  gap: 120px;
 }
 
 /* Header sub menu와 background */
@@ -111,6 +124,7 @@
 .mainHeader:hover {
   background: #fff;
   color: #000;
+  border-bottom: 1px solid #ddd;
   transition-delay: 0s;
   transition: 0.5s;
 }
@@ -148,3 +162,396 @@
 /* Main */
 
 /* Video Slide */
+
+.mainVisual {
+  position: relative;
+  color: #fff;
+}
+
+.quickMenu {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.quickMenu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 96px;
+}
+
+.quickMenu li {
+  text-align: center;
+  width: 100px;
+  opacity: 0.6;
+}
+
+.quickMenu li:hover {
+  opacity: 1;
+}
+
+.quickMenu li:hover a {
+  width: 76px;
+  height: 76px;
+  padding: 20px;
+  background: #fff;
+}
+
+.quickMenu li:hover a img {
+  width: 100%;
+  filter: none;
+}
+
+.quickMenu li:hover span {
+  opacity: 1;
+}
+
+.quickMenu a {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: auto auto 10px;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.quickMenu img {
+  width: 100%;
+  filter: invert(100%);
+}
+
+.quickMenu span {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.scrollBtn {
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  animation: move 1s infinite;
+}
+
+.scrollBtn button {
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+  transform: rotate(-135deg);
+  font-size: 0;
+}
+
+.videoWrap figure {
+  position: relative;
+  height: 100vh;
+}
+
+.videoWrap .videoTit {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.videoWrap .videoTit h2 {
+  margin: 0 0 12px 0;
+  font-size: 62px;
+  font-weight: 700;
+}
+
+.videoWrap .videoTit p {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.videoWrap .videoTit .btnWrap {
+  width: 400px;
+  margin: 40px auto auto;
+}
+
+.videoWrap .videoTit .btnWrap ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.videoWrap .videoTit .btnWrap li {
+  width: 100%;
+}
+
+.videoWrap .videoTit .btnWrap a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 46px;
+  background: #012c5f;
+  border: 2px solid #fff;
+}
+
+.slick-arrow {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 40px;
+  height: 40px;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.slick-arrow::before {
+  display: block;
+  content: '';
+  width: 9px;
+  height: 16px;
+  background: url(../img/arrow.png) 0 0 no-repeat;
+}
+
+.slick-prev {
+  left: 0;
+}
+
+.slick-next {
+  right: 0;
+}
+
+.slick-next.slick-arrow::before {
+  background-position: -11px 0;
+}
+
+.mainSlide .slick-dots-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, 150%);
+}
+
+.mainSlide .slick-dots-container .btn {
+  width: 9px;
+  height: 10px;
+  cursor: pointer;
+  border: none;
+  background: url(../img/btn-play-stop.png) 0 0 no-repeat;
+  background-position-x: -10px;
+}
+
+.mainSlide .slick-dots-container .btn.on {
+  background: url(../img/btn-play-stop.png) 0 0 no-repeat;
+}
+
+.slick-dots {
+  display: flex !important;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 0;
+}
+
+.slick-dots button {
+  width: 8px;
+  height: 8px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.slick-active button {
+  background: #012c5f;
+}
+
+.mainSlide .slick-dots button:hover {
+  background: #012c5f;
+}
+
+/* Main Top Banner */
+
+.mainTopBanner {
+  background: #e7eaf9;
+  padding: 30px 0;
+}
+
+.mainTopBanner .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.mainTopBanner .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.mainTopBanner .left strong {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.mainTopBanner .right button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  border: none;
+  background: none;
+  font-size: 15px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.mainTopBanner .right button::after {
+  display: block;
+  content: '';
+  width: 6px;
+  height: 6px;
+  border: 1px solid #007fa8;
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(-45deg);
+}
+
+/* Event section */
+
+.mainEvent {
+  padding: 100px 0;
+  text-align: center;
+  background: #f4f4f4;
+}
+
+.mainEvent .inner {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.mainEvent .tit h2 {
+  margin: 0 0 20px 0;
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.mainEvent .tit p {
+  font-size: 15px;
+  margin: 0 0 30px 0;
+}
+
+.mainEvent .eventSlide img {
+  width: 100%;
+  height: 300px;
+}
+
+.mainEvent .eventSlide .slick-dots {
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.mainEvent .eventSlide .slick-dots button {
+  background: #ddd;
+}
+
+.mainEvent .eventSlide .slick-dots .slick-active button {
+  background: #012c5f;
+}
+
+.mainEvent .eventSlide .slick-arrow {
+  background: hsla(0, 0%, 100%, 0.6);
+}
+
+.mainEvent .eventSlide .slick-prev::before {
+  background-position: 0 -17px;
+}
+
+.mainEvent .eventSlide .slick-next::before {
+  background-position: -11px -17px;
+}
+
+/* Benefit Section */
+
+.benefit {
+  background: #f4f4f4;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.benefit .tit h2 {
+  margin: 0 0 20px 0;
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.benefit .tit p {
+  font-size: 15px;
+  margin: 0 0 30px 0;
+}
+
+.benefit .inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.benefit .inner ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.benefit .inner li {
+  flex: 1;
+  width: 414px;
+  height: 285px;
+  padding: 40px 0 0;
+  background: #fff;
+  font-weight: 500;
+}
+
+.benefit .inner li span {
+  display: block;
+  width: 56px;
+  height: 24px;
+  padding: 4px;
+  margin: 0 auto;
+  background: #012c5f;
+  border-radius: 30px;
+  font-size: 15px;
+  text-align: center;
+  color: #fff;
+}
+
+.benefit .inner li strong {
+  display: block;
+  font-size: 22px;
+  color: #012c5f;
+  margin: 20px 0 140px 0;
+}
+
+.benefit .inner li strong {
+}
