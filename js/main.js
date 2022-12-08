@@ -1,4 +1,13 @@
 $(function () {
+  $(window).scroll(function () {
+    var height = $(window).scrollTop();
+    if (height > 50) {
+      $('.mainHeader').addClass('on');
+    } else {
+      $('.mainHeader').removeClass('on');
+    }
+  });
+
   $('.mainSlide').slick({
     autoplay: true,
     autoplaySpeed: 5000,
@@ -31,5 +40,18 @@ $(function () {
     arrows: true,
     dots: true,
     draggable: false,
+  });
+
+  $('.noticeSlide').slick({
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: false,
+    arrows: true,
+    draggable: false,
+  });
+
+  $('.btn-check').on('click', function () {
+    $(this).toggleClass('on');
+    $('.usedcar-link').toggleClass('on');
   });
 });
